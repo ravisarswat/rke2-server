@@ -7,7 +7,7 @@
   tasks:
     - name: Copy script file to remote machine
       copy:
-        src: install_rancher.sh
+        src: path/to/script.sh
         dest: /root/install_rancher.sh
         mode: '0755'
 
@@ -17,6 +17,7 @@
         executable: /bin/bash
         environment:
           KUBECONFIG: /etc/rancher/rke2/rke2.yaml
-          PATH: /var/lib/rancher/rke2/bin:{{ ansible_env.PATH }}
+          PATH: "/var/lib/rancher/rke2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
         
         
