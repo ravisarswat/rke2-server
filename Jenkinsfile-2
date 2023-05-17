@@ -4,6 +4,11 @@ pipeline {
    ANSIBLE_PRIVATE_KEY=credentials('rancher-key') 
   }
   stages {
+  stage('Debug') {
+            steps {
+                sh 'echo "Workspace Directory: $WORKSPACE"'
+            }
+        }
     stage('One') {
       steps {
         sh 'ansible-galaxy collection install -r requirements.yml'
