@@ -8,8 +8,10 @@
     - name: Copy script file to remote machine
       copy:
         src: install_rancher.sh
-        dest: /tmp/install_rancher.sh
+        dest: /
         mode: '0755'
 
     - name: Execute script on remote machine
-      shell: /tmp/install_rancher.sh
+      shell: |
+        cd ~
+        /install_rancher.sh
