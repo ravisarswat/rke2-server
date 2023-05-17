@@ -15,9 +15,8 @@
       shell:
         cmd: /root/install_rancher.sh
         executable: /bin/bash
-        env:
+        environment:
           KUBECONFIG: /etc/rancher/rke2/rke2.yaml
           PATH: /var/lib/rancher/rke2/bin:{{ ansible_env.PATH }}
-
         
         
