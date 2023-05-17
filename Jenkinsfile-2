@@ -6,9 +6,9 @@ pipeline {
   stages {
     stage('One') {
       steps {
-        //sh 'ansible-galaxy collection install -r requirements.yml'
-        //sh 'ansible-playbook -i inventory/my-cluster/hosts.ini --private-key=$ANSIBLE_PRIVATE_KEY site.yml'
-          sh 'ansible-playbook -i inventory/my-cluster/hosts.ini --private-key=$ANSIBLE_PRIVATE_KEY install_rancher.yml'
+        sh 'ansible-galaxy collection install -r requirements.yml'
+        sh 'ansible-playbook -i inventory/my-cluster/hosts.ini --private-key=$ANSIBLE_PRIVATE_KEY site.yml'
+        sh 'ansible-playbook -i inventory/my-cluster/hosts.ini --private-key=$ANSIBLE_PRIVATE_KEY install_rancher.yml'
 
       }
     }
