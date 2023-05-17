@@ -7,7 +7,7 @@
   tasks:
     - name: Copy script file to remote machine
       copy:
-        src: path/to/script.sh
+        src: install_rancher.sh
         dest: /root/install_rancher.sh
         mode: '0755'
 
